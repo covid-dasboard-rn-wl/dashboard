@@ -7,10 +7,15 @@
     
     <body>
         <h1>COVID-19 Deaths (April 21, 2020)</h1>
-        <div id='map' style='width:100%; height:500'></div>
+        <div id='map' style='width:750; height:500'></div>
+        <button onclick="expand()" id="size">expand</button>
     </body>
     
     <script>
+        function expand() {
+            document.getElementById("map").style.height = "700px";
+            document.getElementById("map").style.width = "900px";
+        }
         // Set up the world map
         map = new L.Map('map');
         var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
