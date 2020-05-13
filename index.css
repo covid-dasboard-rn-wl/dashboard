@@ -1,6 +1,35 @@
 body {
     color: darkgray;
+    padding-bottom: 50px;
+    background-color: #d5e0eb;
 }
 #results {
     color: navy;
+}
+#map {
+    margin: auto;
+    padding: 10px;
+    width: 750;
+    height: 500;
+}
+#btns {
+    padding-left: 425px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 15px;
+}
+#search {
+   padding-left: 575px;
+}
+#canvascontain {
+    padding-left: 390px;
+}
+h4 {
+    text-align: center;
+}
+#canvascontain2 {
+    padding-left: 322px;
+    padding-bottom: 20px;
 }
