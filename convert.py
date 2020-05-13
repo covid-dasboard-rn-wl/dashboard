@@ -17,26 +17,28 @@ count = 0 # count number of circles
 
 # loop through all rows in the csv file
 for line in datarows:
-	templist = line.split(",")
-	prov = templist[2]
-	country = templist[3]
-	confirmed = templist[7]
-	deaths = templist[8]
-	recover = templist[9]
-	lat = templist[5]
-	lon = templist[6]
+        templist = line.split(",")
+        prov = templist[2]
+        country = templist[3]
+        confirmed = templist[7]
+        deaths = templist[8]
+        recover = templist[9]
+        lat = templist[5]
+        lon = templist[6]
 
-	# make radius of circle bigger for cartographic appeal
-	deathradius = int(deaths) * 50
-	
-	if (int(deaths) > 0):
-		if (prov != ""):
-			marker = "L.circle([" + lat + "," + lon + "],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:" + str(deathradius) + "}).addTo(map).bindPopup('" + prov.replace("'", "") + "," + country.replace("'","") + " : " + deaths + "')"	
-		else:
-			marker = "L.circle([" + lat + "," + lon + "],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:" + str(deathradius) + "}).addTo(map).bindPopup('" + country.replace("'", "") + " : " + deaths + "')"
+       
+        # make radius of circle bigger for cartographic appeal
+        if (deaths != ""):                
+                deathradius = int(deaths) * 50
 
-		fo.write(marker + "\n")
-		count = count + 1
+                if (int(deaths) > 0):
+                        if (prov != ""):
+                                marker = "L.circle([" + lat + "," + lon + "],{color:'orange',fillColor:'#ffecc7',fillOpacity:0.5,radius:" + str(deathradius) + "}).addTo(layergroup).bindPopup('" + prov.replace("'", "") + "," + country.replace("'","") + " : " + deaths + "')"	
+                        else:
+                                marker = "L.circle([" + lat + "," + lon + "],{color:'orange',fillColor:'#ffecc7',fillOpacity:0.5,radius:" + str(deathradius) + "}).addTo(layergroup).bindPopup('" + country.replace("'", "") + " : " + deaths + "')"
+
+                        fo.write(marker + "\n")
+                        count = count + 1
 		
 
 print(str(count) + " markers written out")
