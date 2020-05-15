@@ -61,7 +61,7 @@
         
         <br><br><br>
         
-        <div id="canvascontain2"><canvas id="mycanvas2" width="750" height="500" style="border:0.5px solid lightgray; padding-left: 15px;"></canvas></div>
+       
         
         <div id="search"><input type="text" id="mysearch"><button onclick="goSearch()" id="btn">submit</button></div><br>
         <div id="canvascontain"><canvas id="mycanvas" width="600" height="110" style="border:0.5px solid lightgray; padding-left: 15px;"></canvas></div>
@@ -83,20 +83,6 @@
         
        
             
-            var c = document.getElementById("mycanvas2");
-            var ctx = c.getContext('2d');
-            var y = 10;
-            for (province=0; province<data.length; province++){
-                if (data[province]["Country_Region"] == "Canada") {
-                    ctx.fillStyle = "red";
-                    ctx.fillRect(10,y, data[province]["Confirmed"]/38,50);
-                    ctx.fillStyle = "black";
-                    ctx.font = "10pt Times";
-                    ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], 560,y+28);
-                    var y = y+60
-                
-                }
-            }
             
           
             
