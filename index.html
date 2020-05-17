@@ -82,7 +82,20 @@
     </style>
     <script>
         
-       
+       var c = document.getElementById("mycanvas2");
+            var ctx = c.getContext('2d');
+            var y = 10;
+            for (province=0; province<data.length; province++){
+                if (data[province]["Country_Region"] == "Canada") {
+                    ctx.fillStyle = "red";
+                    ctx.fillRect(10,y, data[province]["Confirmed"]/38,50);
+                    ctx.fillStyle = "black";
+                    ctx.font = "10pt Times";
+                    ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], 560,y+28);
+                    var y = y+60
+               
+                }
+            }
                
           
             
