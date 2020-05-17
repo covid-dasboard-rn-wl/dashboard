@@ -15,25 +15,26 @@
         <script src='https://unpkg.com/leaflet@1.4.0/dist/leaflet.js'></script>
         <script src="04-21-2020.json"></script>
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
    
     
     <body>
         
         <header>
-  <div class="collapse bg-dark" id="navbarHeader">
+  <div class="collapse bg-light" id="navbarHeader">
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">About</h4>
-          <p class="text-muted">This website is dedicated to informing the public about the current COVID-19 situation with daily updates on cases.</p>
+        <div class="col-sm-10 col-md-7 py-4">
+          <h4 class="text-muted">Our Dashboard</h4>
+          <p class="text-muted">This website is dedicated to informing the public about the current COVID-19 situation around the world and in Canada through  continuous updates on cases, deaths, and recoveries.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Pages</h4>
+          <h4 class="text-muted">Pages</h4>
           <ul class="list-unstyled">
-            <li><a href="index.html" class="text-white">Home</a></li>
-            <li><a href="about.html" class="text-white">About</a></li>
-            <li><a href="page3.html" class="text-white">???</a></li>
+            <li><a href="index.html" class="text-muted">Global Data</a></li>
+            <li><a href="about.html" class="text-muted">About</a></li>
+            <li><a href="page3.html" class="text-muted">Canadian Data</a></li>
           </ul>
         </div>
       </div>
@@ -43,7 +44,7 @@
     <div class="container d-flex justify-content-between">
       <a href="index.html" class="navbar-brand d-flex align-items-center">
        
-        <strong>COVID-19 Dashboard</strong>
+          <div id="title"><img src="virus2.png"><strong>COVID-19 Dashboard</strong></div>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -51,18 +52,34 @@
     </div>
   </div>
 </header>
-
-        <h1>COVID-19 Deaths (April 21, 2020)</h1>
+        <div id="titlecontain"><h2 id=ttitle>COVID-19 Around the World</h2></div>
+        <div id="caption"><h5 id='captiontext'>For the past few months, COVID-19 has taken the world by storm. Already, it has infected over 200 countries and territories around the world. The world's fight against the virus has been relentless, however, our efforts to counter the virus are not yet finished. It is crucial that all of its data relating its journey around the world is tracked using graphs, maps, and facts. Below you will find "at-a-glance" data for COVID-19 around the world. </h5></div>
+        <div class="row">
+  <div class="side">
+      <div class="w3-panel w3-card"><p id="card1">Global Deaths</p><h2 id=tcard1>298 000</h2><br></div>
+  </div>
+  <div class="main">
+    <div class="middle">
+      <div class="w3-panel w3-card"><p id="card2">Global Recoveries</p><h2 id=tcard2>1 560 000</h2><br></div>
+      </div>
+    <div class="right">
+      <div class="w3-panel w3-card"><p id="card3">Global Confirmed</p><h2 id=tcard3>4 370 000</h2><br></div>
+      </div>  
+    
+    
+</div>
+        </div>
+        <p id="empty"></p>
+        <h1>COVID-19 Deaths (April 21, 2020)</h1><br>
         <div id='map'></div>
         <div id="btns"><button onclick="draw()" id="mapped">click here for deaths map</button>
         <button onclick="active()" id="active">confirmed cases</button>
         <button onclick="expand()" id="expand">expand</button>
         <button onclick="recover()" id="recover">recovered cases</button></div>
-        <div id="canvascontain2"><canvas id="mycanvas2" width="750" height="500" style="border:0.5px solid lightgray; padding-left: 15px;"></canvas></div>
         
         <br><br><br>
         
-       
+        <div id="canvascontain2"><canvas id="mycanvas2" width="750" height="500" style="border:0.5px solid lightgray; padding-left: 15px;"></canvas></div>
         
         <div id="search"><input type="text" id="mysearch"><button onclick="goSearch()" id="btn">submit</button></div><br>
         <div id="canvascontain"><canvas id="mycanvas" width="600" height="110" style="border:0.5px solid lightgray; padding-left: 15px;"></canvas></div>
@@ -82,7 +99,16 @@
     </style>
     <script>
         
-       var c = document.getElementById("mycanvas2");
+            Math.max.apply(Math, data.map(function(o) {
+                largest = o.Deaths;
+                document.getElementById("empty").innerHTML = largest;
+            }))
+            
+        
+
+            
+            
+            var c = document.getElementById("mycanvas2");
             var ctx = c.getContext('2d');
             var y = 10;
             for (province=0; province<data.length; province++){
@@ -93,10 +119,10 @@
                     ctx.font = "10pt Times";
                     ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], 560,y+28);
                     var y = y+60
-               
+                
                 }
             }
-               
+            
           
             
         
@@ -120,10 +146,12 @@
                 
                 
                 ctx.fillStyle = "red";
-                ctx.fillRect(10,25, data[country]["Confirmed"]/250,50);
+                ctx.fillRect(10,25, data[country]["Confirmed"]/250,15);
                 ctx.fillStyle = "black";
-                ctx.font = "15pt Times";
-                ctx.fillText(data[country]['Combined_Key'], 20,58);
+                ctx.font = "8pt Times";
+                ctx.fillText(data[country]['Combined_Key'], 20,20);
+                ctx.fillStyle = "red";
+                ctx.fillRect(10,45, data[country]["Deaths"]/250,15);
                
                 
                 newstring = "In " + data[country].Combined_Key + ", there are " + data[country].Confirmed + " people who have been diagnosed with COVID-19.";
@@ -150,7 +178,7 @@
         
         // Set up the world map
             map = new L.Map('map');
-            var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
+            var cartocdn = 'https://cartocdn_{s}.global.ssl.fastly.net/base-midnight/{z}/{x}/{y}.png';
             cartoAttrib = 'Carto geodatabase is good for this application';
             carto = new L.TileLayer(cartocdn);
             map.setView([51.5, 0.12],2); // centered on London lat, long
