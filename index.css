@@ -1,7 +1,8 @@
 body {
     color: darkgray;
     padding-bottom: 50px;
-    background-color: #d5e0eb;
+    background-color: #021018;
+    
 }
 #results {
     color: navy;
@@ -29,9 +30,125 @@ h1 {
 h4 {
     text-align: center;
 }
-
 #canvascontain2 {
     padding-left: 322px;
     padding-bottom: 20px;
 }
+li {
+    color: black;
+}
+img {
+    width: 50px;
+    
+    
+}
+#ttitle {
+    padding-bottom: 15px;
+}
+#titlecontain {
+    border-bottom: lightgray solid 1px;
+    padding-left: 30px;
+    padding-top: 10px;
+    width: 40%;
+    margin: 35px;
+}
+#caption {
+    padding-left: 65px;
+    padding-right: 30px;
+}
+#captiontext {
+    font-size: 17;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    padding-bottom: 10px;
+}
 
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding-left: 40px;
+  padding-right: 20px;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #021018;
+  padding-top: 20px;
+  
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  background-color: #021018;
+  padding: 20px;
+}
+#card1 {
+    
+    background-color: #021018;
+    padding-top: 15px;
+    color: orange;
+    padding-left: 15px;
+}
+#tcard1 {
+    border-bottom: orange solid 1px;
+    color: orange;
+    font-size: 60px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+.middle {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  background-color: #021018;
+  
+}
+
+/* Main column */
+.right {   
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  background-color: #021018;
+  padding-left: 20px;
+}
+#card2 {
+    
+    background-color: #021018;
+    padding-top: 15px;
+    color: #c985ac;
+    padding-left: 15px;
+}
+#tcard2 {
+    border-bottom: #c985ac solid 1px;
+    color: #c985ac;
+    font-size: 60px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+#card3 {
+    
+    background-color: #021018;
+    padding-top: 15px;
+    color: #89ded1;
+    padding-left: 15px;
+}
+#tcard3 {
+    border-bottom: #89ded1 solid 1px;
+    color: #89ded1;
+    font-size: 60px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+#empty {
+    color: white;
+}
