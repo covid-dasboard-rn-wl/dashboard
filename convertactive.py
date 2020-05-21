@@ -5,7 +5,7 @@
 # Korea, South - Bahamas, The - Gambia, The : Must be manually fixed in the data (South Korea, Bahamas, Gambia) 
 
 # Read file in
-fi = open("04-21-2020.csv","r")
+fi = open("05-20-2020.csv","r")
 fi.readline() # skip over first title line
 datarows = fi.readlines()
 fi.close()
@@ -29,7 +29,7 @@ for line in datarows:
        
         # make radius of circle bigger for cartographic appeal
         if (confirmed != ""):                
-                confirmradius = int(confirmed) * 5
+                confirmradius = int(confirmed) * 2
 
                 if (int(confirmed) > 0):
                         if (prov != ""):
