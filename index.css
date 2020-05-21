@@ -8,13 +8,52 @@ body {
     color: navy;
 }
 #map {
-    margin: auto;
-    padding: 10px;
-    width: 750;
-    height: 500;
+    height: 675;
+    -ms-flex: 60%; /* IE10 */
+    flex: 60%; 
+}
+#control {
+    -ms-flex: 35%; /* IE10 */
+    flex: 35%;
+    padding-left: 20px;
+    
 }
 #btns {
-    padding-left: 425px;
+    padding-left: 60px;
+    padding-bottom: 16px;
+}
+#btns2 {
+    padding-left: 160px;
+    padding-bottom: 20px;
+}
+
+.ctrl {
+    display:inline-block;
+    padding:0.35em 1.2em;
+   border:0.1em solid lightgray;
+   margin:0 0.3em 0.3em 0;
+   border-radius:0.12em;
+   box-sizing: border-box;
+   text-decoration:none;
+   font-family:'Roboto',sans-serif;
+   font-weight:300;
+    color: lightgray;
+   text-align:center;
+   transition: all 0.5s;
+    background-color: #08283f;
+    border-radius: 15px;
+}
+#mapped:hover {
+    color:orange;
+    border:0.2em solid orange;
+}
+#active:hover {
+    color:#89ded1;
+    border:0.2em solid #89ded1;
+}
+#recover:hover {
+    color:#c985ac;
+    border:0.2em solid #c985ac;
 }
 
 h1 {
@@ -24,9 +63,7 @@ h1 {
 #search {
    padding-left: 575px;
 }
-#canvascontain {
-    padding-left: 390px;
-}
+
 h4 {
     text-align: center;
 }
@@ -44,17 +81,26 @@ img {
 }
 #ttitle {
     padding-bottom: 15px;
+    font-size: 30px;
 }
 #titlecontain {
     border-bottom: lightgray solid 1px;
     padding-left: 30px;
     padding-top: 10px;
-    width: 40%;
+    width: 50%;
     margin: 35px;
 }
 #caption {
     padding-left: 65px;
     padding-right: 30px;
+}
+#mapcontain {
+    padding-left: 30px;
+    padding-top: 30px;
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
 }
 #captiontext {
     font-size: 17;
@@ -91,7 +137,9 @@ img {
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
   background-color: #021018;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
 }
 #card1 {
     
@@ -141,6 +189,7 @@ img {
     padding-top: 15px;
     color: #89ded1;
     padding-left: 15px;
+    
 }
 #tcard3 {
     border-bottom: #89ded1 solid 1px;
@@ -151,4 +200,237 @@ img {
 }
 #empty {
     color: white;
+}
+#optiontext {
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+#optcontain {
+    padding-top: 15px;
+    padding-left: 180px;
+    padding-bottom: 20px;
+}
+#canvascontain3 {
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+#canvascontain {
+    padding-bottom: 20px;
+}
+#btncontain1 {
+    padding-left: 510px;
+}
+#canvascontain4 {
+    padding-bottom: 20px;
+    padding-left: 18px;
+}
+#titlecontain2 {
+    border-bottom: lightgray solid 1px;
+    padding-left: 30px;
+    width: 40%;
+    margin: 35px;
+}
+#ttitle2 {
+    padding-bottom: 15px;
+}
+#ctrltitle {
+    border-bottom: lightgray solid 1px;
+    padding-bottom: 10px;
+    width: 60%;
+    padding-left: 20px;
+}
+#ctrltext {
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+#wleaders {
+    border-bottom: lightgray solid 1px;
+    padding-bottom: 10px;
+    width: 50%;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+.row2 {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side2 {
+  -ms-flex: 32%; /* IE10 */
+  flex: 32%;
+  background-color: #021018;
+  
+  
+}
+
+/* Main column */
+.main2 {   
+  -ms-flex: 68%; /* IE10 */
+  flex: 68%;
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  background-color: #021018;
+  
+}
+.middle2 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  background-color: #021018;
+  
+}
+
+/* Main column */
+.right2 {   
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  background-color: #021018;
+  
+}
+
+#stat1 {
+    
+    background-color: #021018;
+    padding-top: 10px;
+    color: orange;
+    
+}
+#stat2 {
+    
+    background-color: #021018;
+    padding-top: 10px;
+    color: #c985ac;
+    
+}
+#stat3 {
+    
+    background-color: #021018;
+    padding-top: 10px;
+    color: #89ded1;
+    
+    
+}
+#wcard1 {
+    border-bottom: orange solid 1px;
+    color: orange;
+    font-size: 12px;
+    padding-bottom: 7px;
+}
+#wcard2 {
+    border-bottom: #c985ac solid 1px;
+    color: #c985ac;
+    font-size: 12px;
+    padding-bottom: 7px;
+    
+}
+#wcard3 {
+    border-bottom: #89ded1 solid 1px;
+    color: #89ded1;
+    font-size: 12px;
+    padding-bottom: 7px;
+    
+}
+#selectbtn {
+    
+    padding:0.35em 1.2em;
+   border:0.1em solid lightgray;
+   margin:0 0.3em 0.3em 0;
+   border-radius:0.12em;
+   box-sizing: border-box;
+   text-decoration:none;
+   font-family:'Roboto',sans-serif;
+   font-weight:300;
+    color: lightgray;
+   text-align:center;
+   transition: all 0.5s;
+    background-color: #08283f;
+    border-radius: 15px;
+}
+#selectbtn:hover {
+    color:lightgray;
+    border:0.2em solid lightgray;
+}
+
+#mysearch {
+  width: 70%;
+  border: 3px solid #08283f;
+  padding: 5px;
+  height: 30px;
+  border-radius: 15px;
+  outline: none;
+  color: #08283f;
+  font-size: 12px;
+  padding-left: 10px;
+    
+}
+
+#mysearch:focus{
+  color: #08283f;
+}
+#searchlist {
+    border-radius: 25;
+    background-color: #08283f;;
+    display: block;
+    border: 1px solid lightgray;
+    color: lightgray;
+    height: 35px;
+}
+#searchtext {
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+#sbarcontain {
+    padding-left: 40px;
+}
+.row3 {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+#side3 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  background-color: #021018;
+}
+
+/* Main column */
+#main3 {   
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  background-color: #021018;
+}
+#gtitle {
+    padding-bottom: 8px;
+    font-size: 25px;
+}
+#gtitlecontain {
+    border-bottom: lightgray solid 1px;
+    padding-left: 30px;
+    width: 90%;
+    margin: 35px;
+}
+#g1caption {
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
