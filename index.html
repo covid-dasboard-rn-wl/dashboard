@@ -188,6 +188,7 @@
         t = 0
         h = 565
         for (text=0; text<11; text++){
+            ctx.fillStyle = "darkgray";
             ctx.font = "10pt Times";
             ctx.fillText(t, 533, h);
             t = t+500000
@@ -201,7 +202,7 @@
             var x = x+17  
         }
         
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "darkgray";
         ctx.font = "8pt Times";
         ctx.fillText("Jan. 26", 10, 585);
         ctx.font = "8pt Times";
