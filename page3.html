@@ -1,6 +1,9 @@
+
 <html>
-  <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <head>
+        <link rel='stylesheet' href='https://unpkg.com/leaflet@1.4.0/dist/leaflet.css'/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -9,28 +12,31 @@
 
     <!-- Bootstrap core CSS -->
 <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="page3.css">
-  </head>
-  
-  <body>
+        <link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+        <script src='https://unpkg.com/leaflet@1.4.0/dist/leaflet.js'></script>
+        <script src="05-20-2020.json"></script>
+        <script src="tseries.json"></script>
+        <link rel="stylesheet" href="page3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+   
     
-
-      
-      <body>
+    <body>
+        
         <header>
-  <div class="collapse bg-dark" id="navbarHeader">
+  <div class="collapse bg-light" id="navbarHeader">
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">About</h4>
-          <p class="text-muted">This website is dedicated to informing the public about the current COVID-19 situation with daily updates on cases.</p>
+        <div class="col-sm-10 col-md-7 py-4">
+          <h4 class="text-muted">Our Dashboard</h4>
+          <p class="text-muted">This website is dedicated to informing the public about the current COVID-19 situation around the world and in Canada through  continuous updates on cases, deaths, and recoveries.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Pages</h4>
+          <h4 class="text-muted">Pages</h4>
           <ul class="list-unstyled">
-            <li><a href="index.html" class="text-white">Home</a></li>
-            <li><a href="page2.html" class="text-white">About</a></li>
-            <li><a href="page3.html" class="text-white">???</a></li>
+            <li><a href="index.html" class="text-muted">Global Data</a></li>
+            <li><a href="about.html" class="text-muted">About</a></li>
+            <li><a href="page3.html" class="text-muted">Canadian Data</a></li>
           </ul>
         </div>
       </div>
@@ -40,7 +46,7 @@
     <div class="container d-flex justify-content-between">
       <a href="index.html" class="navbar-brand d-flex align-items-center">
        
-        <strong>COVID-19 Dashboard</strong>
+          <div id="title"><img src="virus2.png"><strong>COVID-19 Dashboard</strong></div>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -48,9 +54,51 @@
     </div>
   </div>
 </header>
+        
+        
+        <div id="canvascontain2"><canvas id="mycanvas2" width="750" height="500" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>
+        
 
-  </body>
+    <script>
+        
+        
+        
+        
+        
+            
+        var c = document.getElementById("mycanvas2");
+        var ctx = c.getContext('2d');
+        var y = 10;
+        for (province=0; province<data.length; province++){
+            if (data[province]["Country_Region"] == "Canada") {
+                ctx.fillStyle = "red";
+                ctx.fillRect(10,y, data[province]["Confirmed"]/38,50);
+                ctx.fillStyle = "black";
+                ctx.font = "10pt Times";
+                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], 560,y+28);
+                var y = y+60
+            
+            }
+        }
+        
+        
+        
+        
+       
+        
+        
+        
+
+        
+        
+            
+        
   
     
-  
+
+        
+
+        
+    </script>
+
 </html>
