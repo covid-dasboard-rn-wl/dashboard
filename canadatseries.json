@@ -1,0 +1,122 @@
+data2 = [
+    {
+    "Date": "2020-01-26",
+    "Confirmed": 1
+    },
+    {
+    "Date": "2020-01-30",
+    "Confirmed": 2
+    },
+    {
+    "Date": "2020-02-02",
+    "Confirmed": 4
+    },
+    {
+    "Date": "2020-02-06",
+    "Confirmed": 5
+    },
+    {
+    "Date": "2020-02-10",
+    "Confirmed": 7
+    },
+    {
+    "Date": "2020-02-14",
+    "Confirmed": 7
+    },
+    {
+    "Date": "2020-02-18",
+    "Confirmed": 8
+    },
+    {
+    "Date": "2020-02-22",
+    "Confirmed": 9
+    },
+    {
+    "Date": "2020-02-26",
+    "Confirmed": 11
+    },
+    {
+    "Date": "2020-03-01",
+    "Confirmed": 24
+    },
+    {
+    "Date": "2020-03-05",
+    "Confirmed": 37
+    },
+    {
+    "Date": "2020-03-09",
+    "Confirmed": 77
+    },
+    {
+    "Date": "2020-03-13",
+    "Confirmed": 193
+    },
+    {
+    "Date": "2020-03-17",
+    "Confirmed": 478
+    },
+    {
+    "Date": "2020-03-21",
+    "Confirmed": 1277
+    },
+    {
+    "Date": "2020-03-25",
+    "Confirmed": 3251
+    },
+    {
+    "Date": "2020-03-29",
+    "Confirmed": 6280
+    },
+    {
+    "Date": "2020-04-02",
+    "Confirmed": 11284
+    },
+    {
+    "Date": "2020-04-06",
+    "Confirmed": 16563
+    },
+    {
+    "Date": "2020-04-10",
+    "Confirmed": 22059
+    },
+    {
+    "Date": "2020-04-14",
+    "Confirmed": 27035
+    },
+    {
+    "Date": "2020-04-18",
+    "Confirmed": 34356
+    },
+    {
+    "Date": "2020-04-22",
+    "Confirmed": 41663
+    },
+    {
+    "Date": "2020-04-26",
+    "Confirmed": 48033
+    },
+    {
+    "Date": "2020-04-30",
+    "Confirmed": 54457
+    },
+    {
+    "Date": "2020-05-04",
+    "Confirmed": 61957
+    },
+    {
+    "Date": "2020-05-08",
+    "Confirmed": 67674
+    },
+    {
+    "Date": "2020-05-12",
+    "Confirmed": 72419
+    },
+    {
+    "Date": "2020-05-16",
+    "Confirmed": 77206
+    },
+    {
+    "Date": "2020-05-20",
+    "Confirmed": 81575
+    }
+]
