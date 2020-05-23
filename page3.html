@@ -211,7 +211,15 @@
  
         
    
-        
+               // Set up the world map
+        map = new L.Map('map');
+        var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
+        cartoAttrib = 'Carto geodatabase is good for this application';
+        carto = new L.TileLayer(cartocdn);
+        map.setView([65, -100],3.4); // centered on London lat, long
+        map.addLayer(carto);
+    
+             
          // THIS IS THE GEOJSON CODE - CLOROPLETH map
         L.geoJson(provs, {style: style, onEachFeature: function (feature, layer) {
         layer.bindPopup('<h3>Deaths</h3><h1>'+feature.properties.deaths+'</h1>');
