@@ -92,9 +92,9 @@
                 <div class="w3-panel w3-card"><h2 id="ctrltext">Controls: Click any of the buttons below to switch the graph's data</h2>
                     <div id="btns">
                    
-                        <!--<button onclick="draw()" id="mapped" class="ctrl">Deaths</button> 
+                        <button onclick="draw()" id="mapped" class="ctrl">Deaths</button> 
                         <button onclick="active()" id="active" class="ctrl">Confirmed</button> 
-                        <button onclick="recover()" id="recover" class="ctrl">Recovered</button></div></div> -->
+                        <button onclick="recover()" id="recover" class="ctrl">Recovered</button></div></div>
                 
                 <div><h3 id="wleaders">The World's Leaders</h3></div>
         <div class="row2">
@@ -210,14 +210,7 @@
               
  
         
-   
-               // Set up the world map
-        map = new L.Map('map');
-        var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
-        cartoAttrib = 'Carto geodatabase is good for this application';
-        carto = new L.TileLayer(cartocdn);
-        map.setView([65, -100],3.4); // centered on London lat, long
-        map.addLayer(carto);
+
     
              
          // THIS IS THE GEOJSON CODE - CLOROPLETH map
