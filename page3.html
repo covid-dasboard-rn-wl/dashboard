@@ -146,13 +146,7 @@
     <script>
         
                // Set up the world map
-            map = new L.Map('map');
-            var cartocdn = 'https://cartocdn_{s}.global.ssl.fastly.net/base-midnight/{z}/{x}/{y}.png';
-            cartoAttrib = 'Carto geodatabase is good for this application';
-            carto = new L.TileLayer(cartocdn);
-            map.setView([51.5, 0.12],2); // centered on London lat, long
-            map.addLayer(carto);   
-            layergroup = L.layerGroup().addTo(map); 
+            
         
          function selectsearch() {
             var newstring = ""
