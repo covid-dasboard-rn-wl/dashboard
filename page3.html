@@ -76,17 +76,109 @@
 
         
         
+         
+</div>
+        </div>
+        <div id="titlecontain2"><h2 id=ttitle2>Mapped Data</h2></div>
+        <div id="caption"><h5 id='captiontext'>Here, you can browse through mapped data for hundreds of countries for their deaths, total confirmed cases, and even their recoveries using the control panel</h5></div>
+        
+        <div id="mapcontain">
+            
+           
+            <div id='map' class="w3-panel w3-card"></div>
+            
+            <div id="control" class="w3-panel w3-card">
+            <h3 id="ctrltitle" >COVID-19 Map</h3>
+                <div class="w3-panel w3-card"><h2 id="ctrltext">Controls: Click any of the buttons below to switch the graph's data</h2>
+                    <div id="btns">
+                        <button onclick="draw()" id="mapped" class="ctrl">Deaths</button>
+                        <button onclick="active()" id="active" class="ctrl">Confirmed</button>
+                        <button onclick="recover()" id="recover" class="ctrl">Recovered</button></div></div>
+                <div><h3 id="wleaders">The World's Leaders</h3></div>
+        <div class="row2">
+          <div class="side2">
+              <div class="w3-panel w3-card"><p id="stat1">Deaths</p><h2 id=wcard1></h2><br></div>
+          </div>
+          <div class="main2">
+            <div class="middle2">
+              <div class="w3-panel w3-card"><p id="stat2">Recoveries</p><h2 id=wcard2></h2><br></div>
+              </div>
+            <div class="right2">
+              <div class="w3-panel w3-card"><p id="stat3">Confirmed</p><h2 id=wcard3></h2><br></div>
+              </div>  
+
+          </div>
+        </div>
+                <div><h3 id="wleaders">Search This Map</h3></div>
+                <div class="w3-panel w3-card"><h2 id="searchtext">Here, you can search this map by entering any region into the search bar, selecting the data you would like to view, and finally by clicking submit (United States is US).<br><br>Search Bar: County, Province/State, Country. E.g. Ontario, Canada or New York City, New York, US </h2>
+                <div id=sbarcontain><input type="text" id="mysearch" placeholder="County, Province/State, Country..."><button onclick="selectsearch()" id="selectbtn">Submit</button></div>
+                
+                <div id="optcontain">
+                <select id="searchlist">
+                <option value="confirm">Confirmed</option>
+                <option value="recovered">Recoveries</option>
+                <option value="death1">Deaths</option>
+                    </select></div></div>
+                
+                 <div id="canvascontain"><canvas id="mycanvas" width="500" height="50" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>
+            </div>
+        </div>
+        
+        
         
         
         <div id="canvascontain2"><canvas id="mycanvas2" width="750" height="500" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>
         
-                <h1>COVID-19 Recovered (March 23, 2020)</h1>
+           
         <div id='map' style='width:100%; height:500'></div>      
-
+ <style>
+    
+        .leaflet-popup-tip {
+            background-color: navy;
+            border: 1px solid black;
+    
+        }
+    
+    </style>
+        
     <script>
         
         
         
+         function selectsearch() {
+            var newstring = ""
+            var c = document.getElementById("mycanvas");
+            var ctx = c.getContext('2d');
+            var myinput = document.getElementById("mysearch").value;
+            var option = document.getElementById("searchlist").value;
+            for (country=0; country < data.length; country++) {
+                if (myinput == data[country].Combined_Key){
+                    if (option == "recovered") {
+                        ctx.clearRect(0,0,1000,200);
+                        ctx.fillStyle = "#c985ac";
+                        ctx.fillRect(10,18, data[country]["Recovered"]/750,15);
+                        ctx.font = "10pt Times";
+                        ctx.fillText(data[country]['Recovered'], data[country]["Recovered"]/750 + 20,30);
+                    }
+                    else if (option == "confirm"){
+                        ctx.clearRect(0,0,1000,200);
+                        ctx.fillStyle = "#85ded1";
+                        ctx.fillRect(10,18, data[country]["Confirmed"]/3800,15);
+                        ctx.font = "10pt Times";
+                        ctx.fillText(data[country]['Confirmed'], data[country]["Confirmed"]/3800 + 20,30);
+                    }
+                    else if (option == "death1"){
+                        ctx.clearRect(0,0,1000,200);
+                        ctx.fillStyle = "orange";
+                        ctx.fillRect(10,18, data[country]["Deaths"]/250,15);
+                        ctx.font = "10pt Times";
+                        ctx.fillText(data[country]['Deaths'], data[country]["Deaths"]/250 + 20,30);
+                    }   
+                }
+                
+                
+            }
+             
             // GEOJSON COLOR RAMP
         function getColor(d) {
            if (d > 9) {
@@ -112,14 +204,7 @@
             };
         }
         
-        // Set up the world map
-        map = new L.Map('map');
-        var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
-        cartoAttrib = 'Carto geodatabase is good for this application';
-        carto = new L.TileLayer(cartocdn);
-        map.setView([65, -100],3.4); // centered on London lat, long
-        map.addLayer(carto);
-    
+   
         
          // THIS IS THE GEOJSON CODE - CLOROPLETH map
         L.geoJson(provs, {style: style, onEachFeature: function (feature, layer) {
@@ -140,17 +225,13 @@
                 ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], 560,y+28);
                 var y = y+60
             
+                
             }
         }
         
         
         
         
-       
-        
-        
-        
-
         
         
             
