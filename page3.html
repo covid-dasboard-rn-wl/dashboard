@@ -335,7 +335,7 @@
         for (province=0; province<data.length; province++){
             if (data[province]["Country_Region"] == "Canada") {
                 ctx.fillStyle = "#85ded1";
-                ctx.fillRect(10,y, data[province]["Confirmed"]/39,50);
+                ctx.fillRect(10,y, data[province]["Confirmed"]/80,50);
                 ctx.fillStyle = "darkgray";
                 ctx.font = "10pt Times";
                 ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], 560,y+28);
@@ -354,7 +354,7 @@
         for (province=0; province<data.length; province++){
             if (data[province]["Country_Region"] == "Canada") {
                 ctx.fillStyle = "c985ac";
-                ctx.fillRect(10,y, data[province]["Recovered"]/20,50);
+                ctx.fillRect(10,y, data[province]["Recovered"]/70,50);
                 ctx.fillStyle = "darkgray";
                 ctx.font = "10pt Times";
                 ctx.fillText(data[province]['Province_State'] + " " + data[province]["Recovered"], 560,y+28);
@@ -372,7 +372,7 @@
         for (province=0; province<data.length; province++){
             if (data[province]["Country_Region"] == "Canada") {
                 ctx.fillStyle = "orange";
-                ctx.fillRect(10,y, data[province]["Deaths"]/10,50);
+                ctx.fillRect(10,y, data[province]["Deaths"]/30,50);
                 ctx.fillStyle = "darkgray";
                 ctx.font = "10pt Times";
                 ctx.fillText(data[province]['Province_State'] + " " + data[province]["Deaths"], 560,y+28);
