@@ -279,14 +279,14 @@
             ctx.fillStyle = "darkgray";
             ctx.font = "10pt Times";
             ctx.fillText(t, 533, h);
-            t = t+3000
+            t = t+10000
             h= h- 52
         }
     
         var x = 0;
         for (confirm=0; confirm<data2.length; confirm++) {
             ctx.fillStyle = "#021018";
-            ctx.fillRect(x,560,12,-data2[confirm]["Confirmed"]/13);
+            ctx.fillRect(x,560,12,-data2[confirm]["Confirmed"]/40);
             var x = x+17  
         }
         
