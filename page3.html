@@ -216,7 +216,7 @@
         var cartocdn = 'https://cartocdn_{s}.global.ssl.fastly.net/base-midnight/{z}/{x}/{y}.png';
         cartoAttrib = 'Carto geodatabase is good for this application';
         carto = new L.TileLayer(cartocdn);
-        map.setView([65, -100],3); // centered on London lat, long
+        map.setView([65, -100],3.3); // centered on London lat, long
         map.addLayer(carto);
         layergroup = L.layerGroup().addTo(map);
         
