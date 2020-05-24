@@ -120,10 +120,20 @@
                     <div id="canvascontain4"><canvas id="mycanvas4" width="600" height="600" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>    
                 </div>
             </div>
-            <div id="main3"><div class="w3-panel w3-card">
-                <div id="gtitlecontain"><h2 id=gtitle>COVID-19 </h2></div>  
-                    <h2 id="g1caption">Throughout the entire year... </h2>
-                <div id="canvascontain2"><canvas id="mycanvas2" width="600" height="600" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div></div></div></div>
+               <div id="main3">
+                <div class="w3-panel w3-card">
+                    <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Global Leaders</h2></div>
+                    <h2 id="g1caption">The  Figure below displays the world's leaders in Confirmed Cases, Recoveries, and Deaths. Navigate using the buttons below to get rid of the filler bars and to see the top 9 regions for each data category.</h2>
+                    <div id="btns2">
+                        <button onclick="dgraph()" id="mapped" class="ctrl">Deaths</button>
+                        <button onclick="cgraph()" id="active" class="ctrl">Confirmed</button>
+                        <button onclick="rgraph()" id="recover" class="ctrl">Recovered</button></div>
+                    <div id="canvascontain3"><canvas id="mycanvas3" width="600" height="600" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>
+                </div>
+                
+            </div>
+  
+        </div>
     </body> 
 
     <script>
@@ -317,13 +327,13 @@
         
         
             
-        var c = document.getElementById("mycanvas2");
+        var c = document.getElementById("mycanvas3");
         var ctx = c.getContext('2d');
         var y = 10;
         for (province=0; province<data.length; province++){
             if (data[province]["Country_Region"] == "Canada") {
                 ctx.fillStyle = "red";
-                ctx.fillRect(10,y, data[province]["Confirmed"]/38,50);
+                ctx.fillRect(10,y, data[province]["Confirmed"]/39,50);
                 ctx.fillStyle = "black";
                 ctx.font = "10pt Times";
                 ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], 560,y+28);
@@ -333,7 +343,43 @@
         }
         
         
+          function rgraph() {
+        var c = document.getElementById("mycanvas3");
+        var ctx = c.getContext('2d');
+        ctx.clearRect(0,0,600,600);
+        var y = 30;
+        for (province=0; [province<data.length; province++){
+            if (data[province]["Recovered"] > 41000) {
+                ctx.fillStyle = "#c985ac";
+                ctx.fillRect(10,y, data[province]["Recovered"]/1000,50);
+                ctx.fillStyle = "darkgray";
+                ctx.font = "10pt Times";
+                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Recovered"], data[province]["Recovered"]/1000 + 20,y+28);
+                var y = y+60
+                
+            }
+        }
+        }
         
+         
+        function dgraph() {
+        var c = document.getElementById("mycanvas3");
+        var ctx = c.getContext('2d');
+        ctx.clearRect(0,0,600,600);
+        var y = 30;
+        for (leaders=0; leaders<data.length; leaders++){
+            if (data[Province]["Deaths"] > 5500) {
+                if (data[Province]["Province_State"] != "New York City, New York, US") {
+                ctx.fillStyle = "orange";
+                ctx.fillRect(10,y, data[Province]["Deaths"]/250,50);
+                ctx.fillStyle = "darkgray";
+                ctx.font = "10pt Times";
+                ctx.fillText(data[Province]['Province_State'] + " " + data[Province]["Deaths"], data[Province]["Deaths"]/250 + 20,y+28);
+                var y = y+60
+                }
+            }
+        }
+        }
         
        
         
