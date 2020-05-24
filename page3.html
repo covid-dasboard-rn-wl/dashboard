@@ -348,7 +348,7 @@
         var ctx = c.getContext('2d');
         ctx.clearRect(0,0,600,600);
         var y = 30;
-        for (province=0; [province]<data.length; province++){
+        for (province=0; province<data.length; province++){
             if (data[province]["Recovered"] > 41000) {
                 ctx.fillStyle = "#c985ac";
                 ctx.fillRect(10,y, data[province]["Recovered"]/1000,50);
