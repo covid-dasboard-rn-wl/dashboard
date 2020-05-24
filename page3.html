@@ -112,7 +112,15 @@
         </div>
     
     
-        
+        <div class="row3">
+            <div id="side3">
+                <div class="w3-panel w3-card">
+                    <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Time Series (Confirmed Cases)</h2></div>  
+                    <h2 id="g1caption">Throughout the entire year, the total confirmed cases has skyrocketed and we have done our best to try and "flatten" the curve. This data set below displays the total confirmed global cases of COVID-19 throughout the entirety of 2020. <br><br>The data you see below was gathered incrementally. Specifically meaning the time period in between each bar is 4 days. The data ranges from late January 22 to May 19. </h2>
+                    <div id="canvascontain4"><canvas id="mycanvas4" width="600" height="600" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>    
+                </div>
+            </div>
+            
         <div id="canvascontain2"><canvas id="mycanvas2" width="750" height="500" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>
     </body> 
 
@@ -242,6 +250,66 @@
             layer.bindPopup('<h5>Recoveries</h5><h4>'+feature2.properties.recover+'</h4>');
             }}).addTo(layergroup);
         }
+        
+        
+                var c = document.getElementById("mycanvas4");
+        var ctx = c.getContext('2d');
+        
+        
+        ctx.beginPath();
+        ctx.moveTo(513, 20);
+        ctx.lineTo(513, 560);
+        ctx.stroke();
+        ctx.moveTo(3, 560);
+        ctx.lineTo(513, 560);
+        ctx.stroke();
+        
+        r = 560
+        for (lines=0; lines<11; lines++) {
+            ctx.beginPath();
+            ctx.moveTo(513, r);
+            ctx.lineTo(523, r);
+            ctx.stroke();
+            r=r-52
+        }
+        
+        t = 0
+        h = 565
+        for (text=0; text<11; text++){
+            ctx.fillStyle = "darkgray";
+            ctx.font = "10pt Times";
+            ctx.fillText(t, 533, h);
+            t = t+500000
+            h= h- 52
+        }
+    
+        var x = 0;
+        for (confirm=0; confirm<data2.length; confirm++) {
+            ctx.fillStyle = "#021018";
+            ctx.fillRect(x,560,12,-data2[confirm]["Confirmed"]/9500);
+            var x = x+17  
+        }
+        
+        ctx.fillStyle = "darkgray";
+        ctx.font = "8pt Times";
+        ctx.fillText("Jan. 26", 10, 585);
+        ctx.font = "8pt Times";
+        ctx.fillText("Feb. 10", 70, 585);
+        ctx.font = "8pt Times";
+        ctx.fillText("Feb. 25", 130, 585);
+        ctx.font = "8pt Times";
+        ctx.fillText("Mar. 11", 190, 585);
+        ctx.font = "8pt Times";
+        ctx.fillText("Mar. 26", 250, 585);
+        ctx.font = "8pt Times";
+        ctx.fillText("Apr. 10", 310, 585);
+        ctx.font = "8pt Times";
+        ctx.fillText("Apr. 25", 370, 585);
+        ctx.font = "8pt Times";
+        ctx.fillText("May. 9", 430, 585);
+        ctx.font = "8pt Times";
+        ctx.fillText("Now", 490, 585);
+        
         
         
         
