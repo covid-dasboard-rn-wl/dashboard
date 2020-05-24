@@ -332,9 +332,9 @@
         var y = 10;
         for (province=0; province<data.length; province++){
             if (data[province]["Country_Region"] == "Canada") {
-                ctx.fillStyle = "red";
+                ctx.fillStyle = "#85ded1";
                 ctx.fillRect(10,y, data[province]["Confirmed"]/39,50);
-                ctx.fillStyle = "black";
+                ctx.fillStyle = "darkgray";
                 ctx.font = "10pt Times";
                 ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], 560,y+28);
                 var y = y+60
@@ -342,44 +342,38 @@
             }
         }
         
-        
-          function rgraph() {
-        var c = document.getElementById("mycanvas3");
+          var c = document.getElementById("mycanvas3");
         var ctx = c.getContext('2d');
-        ctx.clearRect(0,0,600,600);
-        var y = 30;
+        var y = 10;
         for (province=0; province<data.length; province++){
-            if (data[province]["Recovered"] > 41000) {
-                ctx.fillStyle = "#c985ac";
-                ctx.fillRect(10,y, data[province]["Recovered"]/1000,50);
+            if (data[province]["Country_Region"] == "Canada") {
+                ctx.fillStyle = "c985ac";
+                ctx.fillRect(10,y, data[province]["Recovered"]/39,50);
                 ctx.fillStyle = "darkgray";
                 ctx.font = "10pt Times";
-                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Recovered"], data[province]["Recovered"]/1000 + 20,y+28);
+                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Recovered"], 560,y+28);
                 var y = y+60
-                
+            
             }
         }
+        
+               var c = document.getElementById("mycanvas3");
+        var ctx = c.getContext('2d');
+        var y = 10;
+        for (province=0; province<data.length; province++){
+            if (data[province]["Country_Region"] == "Canada") {
+                ctx.fillStyle = "orange";
+                ctx.fillRect(10,y, data[province]["Deaths"]/39,50);
+                ctx.fillStyle = "darkgray";
+                ctx.font = "10pt Times";
+                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Deaths"], 560,y+28);
+                var y = y+60
+            
+            }
         }
         
          
-        function dgraph() {
-        var c = document.getElementById("mycanvas3");
-        var ctx = c.getContext('2d');
-        ctx.clearRect(0,0,600,600);
-        var y = 30;
-        for (leaders=0; leaders<data.length; leaders++){
-            if (data[Province]["Deaths"] > 5500) {
-                if (data[Province]["Province_State"] != "New York City, New York, US") {
-                ctx.fillStyle = "orange";
-                ctx.fillRect(10,y, data[Province]["Deaths"]/250,50);
-                ctx.fillStyle = "darkgray";
-                ctx.font = "10pt Times";
-                ctx.fillText(data[Province]['Province_State'] + " " + data[Province]["Deaths"], data[Province]["Deaths"]/250 + 20,y+28);
-                var y = y+60
-                }
-            }
-        }
-        }
+      
         
        
         
