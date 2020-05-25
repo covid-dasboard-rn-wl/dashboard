@@ -1,3 +1,165 @@
 body {
     color: darkgray;
+    padding-bottom: 50px;
+    background-color: #021018;
+    
 }
+
+
+#btns2 {
+    padding-left: 160px;
+    padding-bottom: 20px;
+}
+
+.ctrl {
+    display:inline-block;
+    padding:0.35em 1.2em;
+   border:0.1em solid lightgray;
+   margin:0 0.3em 0.3em 0;
+   border-radius:0.12em;
+   box-sizing: border-box;
+   text-decoration:none;
+   font-family:'Roboto',sans-serif;
+   font-weight:300;
+    color: lightgray;
+   text-align:center;
+   transition: all 0.5s;
+    background-color: #08283f;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 15px;
+}
+
+
+h4 {
+    text-align: center;
+}
+
+li {
+    color: black;
+}
+img {
+    width: 50px;
+    
+    
+}
+#ttitle {
+    padding-bottom: 15px;
+    font-size: 30px;
+}
+#titlecontain {
+    border-bottom: lightgray solid 1px;
+    padding-left: 30px;
+    padding-top: 10px;
+    width: 50%;
+    margin: 35px;
+}
+#caption {
+    padding-left: 65px;
+    padding-right: 30px;
+}
+
+
+
+#ttitle2 {
+    padding-bottom: 15px;
+}
+#ctrltitle {
+    border-bottom: lightgray solid 1px;
+    padding-bottom: 10px;
+    width: 60%;
+    padding-left: 20px;
+}
+#ctrltext {
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+#wleaders {
+    border-bottom: lightgray solid 1px;
+    padding-bottom: 10px;
+    width: 50%;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+.row2 {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side2 {
+  -ms-flex: 32%; /* IE10 */
+  flex: 32%;
+  background-color: #021018;
+  
+  
+}
+
+/* Main column */
+
+.row3 {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+#side3 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  background-color: #021018;
+}
+
+/* Main column */
+#main3 {   
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  background-color: #021018;
+}
+#gtitle {
+    padding-bottom: 8px;
+    font-size: 25px;
+}
+#gtitlecontain {
+    border-bottom: lightgray solid 1px;
+    padding-left: 30px;
+    width: 90%;
+    margin: 35px;
+}
+#g1caption {
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* mouse over link */
+a:hover {
+  color: orange;
+}
+#resources {
+    padding-left: 22px;
+    font-size: 16px;
+    color: darkgray;
+    padding-bottom: 22px;
+}
+
+
+/* selected link */
