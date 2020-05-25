@@ -1,6 +1,10 @@
-      <html>
+
+<html>
 
     <head>
+        
+    <!-- all stylistic links to w3 schools card style, external style sheets, and json files //-->
+        
         <link rel='stylesheet' href='https://unpkg.com/leaflet@1.4.0/dist/leaflet.css'/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -22,6 +26,7 @@
     
     <body>
         
+        <!-- navigation bar html into a header tag //-->
         <header>
   <div class="collapse bg-light" id="navbarHeader">
     <div class="container">
@@ -53,8 +58,14 @@
     </div>
   </div>
 </header>
+    
+<!-- webpage titles and captions //-->
+        
         <div id="titlecontain"><h2 id=ttitle>COVID-19 Around the World (May 20, 2020)</h2></div>
         <div id="caption"><h5 id='captiontext'>For the past few months, COVID-19 has taken the world by storm. Already, it has infected over 200 countries and territories around the world. The world's fight against the virus has been relentless, however, our efforts to counter the virus are not yet finished. It is crucial that all of its data relating its journey around the world is tracked using graphs, maps, and facts. Below you will find "at-a-glance" data for COVID-19 around the world. </h5></div>
+
+<!-- stat cards for confirmed, recoveries, and deaths for global data updated to May 20, 2020 //-->
+        
         <div class="row">
   <div class="side">
       <div class="w3-panel w3-card"><p id="card1">Global Deaths</p><h2 id=tcard1>328 000</h2><br></div>
@@ -70,38 +81,60 @@
     
 </div>
         </div>
+        
+        <!-- mapped data section start, title, and caption //-->
         <div id="titlecontain2"><h2 id=ttitle2>Mapped Data</h2></div>
         <div id="caption"><h5 id='captiontext'>Here, you can browse through mapped data for hundreds of countries for their deaths, total confirmed cases, and even their recoveries using the control panel</h5></div>
         
+        <!-- start of map div, mapcontain has both the control panel and map into the same row. mapcontain is used as a container for both sections //-->
+        
         <div id="mapcontain">
+            
+            <!-- map div with div class set to w3 schools card //-->
             
             <div id='map' class="w3-panel w3-card"></div>
             
+            <!-- control panel div start styled with a w3 schools card //-->
+            
             <div id="control" class="w3-panel w3-card">
             <h3 id="ctrltitle" >COVID-19 Map</h3>
+                
+                <!-- control panel buttons to control the map's display also set to a w3 schools card //-->
+                
                 <div class="w3-panel w3-card"><h2 id="ctrltext">Controls: Click any of the buttons below to switch the graph's data</h2>
                     <div id="btns">
                         <button onclick="draw()" id="mapped" class="ctrl">Deaths</button>
                         <button onclick="active()" id="active" class="ctrl">Confirmed</button>
                         <button onclick="recover()" id="recover" class="ctrl">Recovered</button></div></div>
+                
+                <!-- world leaders stat card section. this section references a math.max function to account for hte missing innerHTML that is updated based off data. each card is set into a column like grid //-->
+                
                 <div><h3 id="wleaders">The World's Leaders</h3></div>
         <div class="row2">
           <div class="side2">
-              <div class="w3-panel w3-card"><p id="stat1">Deaths</p><h2 id="wcard1">94276 (United States)</h2><br></div>
+              <div class="w3-panel w3-card"><p id="stat1">Deaths</p><h2 id=wcard1></h2><br></div>
           </div>
           <div class="main2">
             <div class="middle2">
-              <div class="w3-panel w3-card"><p id="stat2">Recoveries</p><h2 id=wcard2>303000 (United States)</h2><br></div>
+              <div class="w3-panel w3-card"><p id="stat2">Recoveries</p><h2 id=wcard2></h2><br></div>
               </div>
             <div class="right2">
-              <div class="w3-panel w3-card"><p id="stat3">Confirmed</p><h2 id=wcard3>1590000 (United States)</h2><br></div>
+              <div class="w3-panel w3-card"><p id="stat3">Confirmed</p><h2 id=wcard3></h2><br></div>
               </div>  
 
           </div>
         </div>
+                
+                <!-- search bar, option menu, and canvas section to search through country's data with COVID-19 //-->
+                
                 <div><h3 id="wleaders">Search This Map</h3></div>
+            
                 <div class="w3-panel w3-card"><h2 id="searchtext">Here, you can search this map by entering any region into the search bar, selecting the data you would like to view, and finally by clicking submit (United States is US).<br><br>Search Bar: County, Province/State, Country. E.g. Ontario, Canada or New York City, New York, US </h2>
+                    
+                <!-- actual search bar div with placeholder and CSS styled button //-->    
                 <div id=sbarcontain><input type="text" id="mysearch" placeholder="County, Province/State, Country..."><button onclick="selectsearch()" id="selectbtn">Submit</button></div>
+                    
+                <!-- select option menu titled optcontain to toggle between what the search bar searches for //-->
                 
                 <div id="optcontain">
                 <select id="searchlist">
@@ -110,26 +143,40 @@
                 <option value="death1">Deaths</option>
                     </select></div></div>
                 
+                <!-- canvas graph in the control panel that displays the data searched for in the search bar //-->
+                
                  <div id="canvascontain"><canvas id="mycanvas" width="500" height="50" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>
             </div>
         </div>
         
+        <!-- start of graphs section //-->
+        
         <div class="row3">
+            <!-- each graph is put into the same row in a column grid called row3 which is styled with CSS//-->
+            
+            <!-- time series graph //-->
             <div id="side3">
                 <div class="w3-panel w3-card">
                     <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Time Series (Confirmed Cases)</h2></div>  
                     <h2 id="g1caption">Throughout the entire year, the total confirmed cases has skyrocketed and we have done our best to try and "flatten" the curve. This data set below displays the total confirmed global cases of COVID-19 throughout the entirety of 2020. <br><br>The data you see below was gathered incrementally. Specifically meaning the time period in between each bar is 4 days. The data ranges from late January 22 to May 19. </h2>
+                    
+                    <!-- time series canvas styled and set as 600 x 600 //-->
                     <div id="canvascontain4"><canvas id="mycanvas4" width="600" height="600" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>    
                 </div>
             </div>
+            <!-- 2nd graph section. This graph shows the top 9 world leaders in each data category //-->
             <div id="main3">
-                <div class="w3-panel w3-card">
+                <div class="w3-panel w3-card"> <!-- w3 schools card style //-->
+                    
+                    <!-- graph title and caption //-->
                     <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Global Leaders</h2></div>
                     <h2 id="g1caption">The  Figure below displays the world's leaders in Confirmed Cases, Recoveries, and Deaths. Navigate using the buttons below to get rid of the filler bars and to see the top 9 regions for each data category.</h2>
+                    <!-- graph and canvas buttons that change what the canvas displays to the user. each have their own id and function //-->
                     <div id="btns2">
                         <button onclick="dgraph()" id="mapped" class="ctrl">Deaths</button>
                         <button onclick="cgraph()" id="active" class="ctrl">Confirmed</button>
                         <button onclick="rgraph()" id="recover" class="ctrl">Recovered</button></div>
+                    <!-- drawing in the actual canvas titled canvas 3 //-->
                     <div id="canvascontain3"><canvas id="mycanvas3" width="600" height="600" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>
                 </div>
                 
@@ -140,7 +187,8 @@
         
     </body>
     <style>
-    
+    /* styling the leaflet map marker tool tip to a different color*/
+        
         .leaflet-popup-tip {
             background-color: navy;
             border: 1px solid black;
@@ -149,12 +197,17 @@
     
     </style>
     <script>
+        // referencing to draw the global leaders graph at the bottom left of the page//
         
         var c = document.getElementById("mycanvas3");
         var ctx = c.getContext('2d');
         ctx.clearRect(0,0,600,600);
+        
+        // setting a variable to change in the for loop //
         var y = 30;
         var w = 100;
+        
+        // for loop to place filler bars into the global leaders graph that are changed when a button is clicked. there are 9 bars //
       
         for (leaders=0; leaders<9; leaders++){     
             ctx.fillStyle = "#021018";
@@ -163,10 +216,12 @@
             var w = w+50;
         }
     
+        // referencing canvas 4 which the time series graph in order to draw data based rectangles on it//
+        
         var c = document.getElementById("mycanvas4");
         var ctx = c.getContext('2d');
         
-        
+        // drawing the axis lines //
         ctx.beginPath();
         ctx.moveTo(513, 20);
         ctx.lineTo(513, 560);
@@ -175,7 +230,12 @@
         ctx.lineTo(513, 560);
         ctx.stroke();
         
+        //setting a variable to change in the for loop below//
+        
         r = 560
+        
+        //using a for loop to draw the axis markers and indicators on the y axis. each line is 10 pixels and will move down by 52 pixels each time the function loops // 
+        
         for (lines=0; lines<11; lines++) {
             ctx.beginPath();
             ctx.moveTo(513, r);
@@ -184,15 +244,21 @@
             r=r-52
         }
         
+        // setting variables to change in the for loop //
+        
         t = 0
         h = 565
+        
+        // using a for loop to draw the text labels for each marker on the y-axis. each time it loops it writes a value 500 000 higher than before until it reaches 5 million //
         for (text=0; text<11; text++){
-            ctx.fillStyle = "darkgray";
+            ctx.fillStyle="darkgray";
             ctx.font = "10pt Times";
             ctx.fillText(t, 533, h);
             t = t+500000
             h= h- 52
         }
+        
+        // for loop to draw the bars on the time series graph. it loops through the timeseries json data and draws a bar for each object and confirmed case//
     
         var x = 0;
         for (confirm=0; confirm<data2.length; confirm++) {
@@ -201,6 +267,7 @@
             var x = x+17  
         }
         
+        // manually inputting the x-axis labels for the dates of each bar //
         ctx.fillStyle = "darkgray";
         ctx.font = "8pt Times";
         ctx.fillText("Jan. 26", 10, 585);
@@ -222,20 +289,25 @@
         ctx.fillText("Now", 490, 585);
         
         
-    
+        // functions for the 3 buttons for the global leaders graph
+        
+        // cgraph draws in confirmed cases for top 9 countries when clicked
         
         function cgraph() {
-        var c = document.getElementById("mycanvas3");
+        
+        var c = document.getElementById("mycanvas3"); //references global leaders canvas//
         var ctx = c.getContext('2d');
-        ctx.clearRect(0,0,600,600);
+        ctx.clearRect(0,0,600,600); //clears the canvas in order to draw on it without overlapping bars//
         var y = 30;
+        // for loop to find the all countries with confirmed cases over 80 000. this in total equates to 9 different countries
         for (leaders=0; leaders<data.length; leaders++){
             if (data[leaders]["Confirmed"] > 80000) {
-                if (data[leaders]["Combined_Key"] != "New York City, New York, US") {
+                if (data[leaders]["Combined_Key"] != "New York City, New York, US") { //if statement excludes new york from the graph since isn't a country
                     ctx.fillStyle = "#85ded1";
                     ctx.fillRect(10,y, data[leaders]["Confirmed"]/3600,50);
                     ctx.fillStyle = "darkgray";
                     ctx.font = "10pt Times";
+                    // draws text labelling the bar depending on the width of the rect //
                     ctx.fillText(data[leaders]['Combined_Key'] + " " + data[leaders]["Confirmed"], data[leaders]["Confirmed"]/3500 + 15,y+28);
                     var y = y+60
                 }
@@ -243,11 +315,13 @@
         }
         }
         
+        //rgraph draws in top 9 countries with the most recoveries onto the same canvas//
         function rgraph() {
         var c = document.getElementById("mycanvas3");
         var ctx = c.getContext('2d');
-        ctx.clearRect(0,0,600,600);
+        ctx.clearRect(0,0,600,600); //clears all drawing previously on the graph//
         var y = 30;
+        //for loop to find countries with recoveries over 41000. this equates to 9 countries. //
         for (leaders=0; leaders<data.length; leaders++){
             if (data[leaders]["Recovered"] > 41000) {
                 ctx.fillStyle = "#c985ac";
@@ -255,12 +329,12 @@
                 ctx.fillStyle = "darkgray";
                 ctx.font = "10pt Times";
                 ctx.fillText(data[leaders]['Combined_Key'] + " " + data[leaders]["Recovered"], data[leaders]["Recovered"]/1000 + 20,y+28);
-                var y = y+60
+                var y = y+60 // each time it draws a bar, it moves up by 60 pixels //
                 
             }
         }
         }
-        
+        // dgraph function draws in top 9 countries with the most deaths onto the canvas
         function dgraph() {
         var c = document.getElementById("mycanvas3");
         var ctx = c.getContext('2d');
@@ -268,9 +342,9 @@
         var y = 30;
         for (leaders=0; leaders<data.length; leaders++){
             if (data[leaders]["Deaths"] > 5500) {
-                if (data[leaders]["Combined_Key"] != "New York City, New York, US") {
+                if (data[leaders]["Combined_Key"] != "New York City, New York, US") { //excluding new york from the data and canvas graph//
                 ctx.fillStyle = "orange";
-                ctx.fillRect(10,y, data[leaders]["Deaths"]/250,50);
+                ctx.fillRect(10,y, data[leaders]["Deaths"]/250,50); // divide by 250 to get the correct proportions for the graph on the data
                 ctx.fillStyle = "darkgray";
                 ctx.font = "10pt Times";
                 ctx.fillText(data[leaders]['Combined_Key'] + " " + data[leaders]["Deaths"], data[leaders]["Deaths"]/250 + 20,y+28);
@@ -281,37 +355,40 @@
         }
         
         
-            
+        //binding the enterkey to the search bar's function in the control panel//
+        
         enterkey = document.getElementById("mysearch")   
         enterkey.addEventListener('keyup', function(event) {
         if (event.keyCode === 13) {
         selectsearch();
         }
         });  
+        
+        //select search function which draws on the small canvas on the control panel next to the map
             
         function selectsearch() {
-            var newstring = ""
+            var newstring = "" 
             var c = document.getElementById("mycanvas");
             var ctx = c.getContext('2d');
-            var myinput = document.getElementById("mysearch").value;
-            var option = document.getElementById("searchlist").value;
-            for (country=0; country < data.length; country++) {
+            var myinput = document.getElementById("mysearch").value; //creates a variable for the text the user inputs//
+            var option = document.getElementById("searchlist").value;//creates a variable for the option the user selects. either confirmed, recovery, deaths
+            for (country=0; country < data.length; country++) { //searches through data to find the country that hte user inputted//
                 if (myinput == data[country].Combined_Key){
-                    if (option == "recovered") {
+                    if (option == "recovered") { // draws a bar on the canvas associated with their entered country when recoveries are selected//
                         ctx.clearRect(0,0,1000,200);
                         ctx.fillStyle = "#c985ac";
                         ctx.fillRect(10,18, data[country]["Recovered"]/750,15);
                         ctx.font = "10pt Times";
                         ctx.fillText(data[country]['Recovered'], data[country]["Recovered"]/750 + 20,30);
                     }
-                    else if (option == "confirm"){
+                    else if (option == "confirm"){ // if the user did not select recoveries, it tries to draw a confirmed bar on the canvas//
                         ctx.clearRect(0,0,1000,200);
                         ctx.fillStyle = "#85ded1";
                         ctx.fillRect(10,18, data[country]["Confirmed"]/3800,15);
                         ctx.font = "10pt Times";
                         ctx.fillText(data[country]['Confirmed'], data[country]["Confirmed"]/3800 + 20,30);
                     }
-                    else if (option == "death1"){
+                    else if (option == "death1"){ // if the user did not select confirmed, it draws a deaths bar on the canvas//
                         ctx.clearRect(0,0,1000,200);
                         ctx.fillStyle = "orange";
                         ctx.fillRect(10,18, data[country]["Deaths"]/250,15);
@@ -322,14 +399,16 @@
                 
                 
             }
+            //setting a variable as the input//
             var newstring = myinput;
+            //error message if the search bar is blank//
             if (myinput == "") {
                 alert("An Error Occurred! We could not find " + myinput + " in our dataset. Try: Using the right format of County, State/Province, Country or entering another Region or Reassuring the correct capitalizations are used")
                 }
             
         }
         
-        
+        // math.max function to print the most deaths on the stat cards in the control panel section//
         var paragraph = document.getElementById("wcard1");
         var max = Math.max.apply(Math, data.map(function(o) { return o.Deaths; }))
         paragraph.innerHTML = max;
@@ -340,7 +419,7 @@
                 
             }
         }
-        
+        // math.max function to print the country with the most recoveries on the stat cards in the control panel section//
         var paragraph3 = document.getElementById("wcard2");
         var max = Math.max.apply(Math, data.map(function(o) { return o.Recovered; }))
         paragraph3.innerHTML = max;
@@ -351,7 +430,7 @@
                 
             }
         }
-        
+        // math.max function to print the country with the most confirmed cases on the stat cards in the control panel section//
         var paragraph2 = document.getElementById("wcard3");
         var max = Math.max.apply(Math, data.map(function(o) { return o.Confirmed; }))
         paragraph2.innerHTML = max;
@@ -375,12 +454,16 @@
             layergroup = L.layerGroup().addTo(map); 
         
         
-        
+        //buttons for the map. changes the map to display either deaths, recoveries, or confirmed cases//
         
         // add circles - Italy and Hubei are here as an example 
+        //fucntion that draws the deaths markers onto the leaflet map
         function draw() {
+            // changes the title to the deaths which is the button the user selected//
             document.getElementById("ctrltitle").innerHTML = "COVID-19 Deaths"
+            //clears the map before drawing//
             layergroup.clearLayers();
+            //all map markings//
             L.circle([61.52401,105.318756],{color:'orange',fillColor:'#ffecc7',fillOpacity:0.5,radius:74300}).addTo(layergroup).bindPopup('Russia : 2972')
             L.circle([55.3781,-3.436],{color:'orange',fillColor:'#ffecc7',fillOpacity:0.5,radius:892600}).addTo(layergroup).bindPopup('United Kingdom : 35704')
             L.circle([40.7672726,-73.97152637],{color:'orange',fillColor:'#ffecc7',fillOpacity:0.5,radius:523350}).addTo(layergroup).bindPopup('New York,US : 20934')
@@ -2388,10 +2471,12 @@
             }
 
         
-        
+            //function to draw the total confirmed cases onto the leaflet map//
             function active() {
+                //clears map before drawing//
                 layergroup.clearLayers();
                 document.getElementById("ctrltitle").innerHTML = "COVID-19 Confirmed"
+                //draw markers//
                 L.circle([61.52401,105.318756],{color:'#85ded1',fillColor:'#85ded1',fillOpacity:0.5,radius:617410}).addTo(layergroup).bindPopup('Russia : 308705')
                 L.circle([55.3781,-3.436],{color:'#85ded1',fillColor:'#85ded1',fillOpacity:0.5,radius:496586}).addTo(layergroup).bindPopup('United Kingdom : 248293')
                 L.circle([40.7672726,-73.97152637],{color:'#85ded1',fillColor:'#85ded1',fillOpacity:0.5,radius:389100}).addTo(layergroup).bindPopup('New York,US : 194550')
@@ -5698,10 +5783,12 @@
             }
         
   
-        
+            // function that draws recover global data onto the leaflet map//
             function recover() {
+                //clears map before drawing when clicked//
                 layergroup.clearLayers();
                 document.getElementById("ctrltitle").innerHTML = "COVID-19 Recovered"
+                //draw markers//
                 L.circle([61.52401,105.318756],{color:'#c985ac',fillColor:'#c985ac',fillOpacity:0.5,radius:170784}).addTo(layergroup).bindPopup('Russia : 85392')
                 L.circle([39.8283,-98.5795],{color:'#c985ac',fillColor:'#c985ac',fillOpacity:0.5,radius:606000}).addTo(layergroup).bindPopup('United States : 303000')
                 L.circle([46.2276,2.2137],{color:'#c985ac',fillColor:'#c985ac',fillOpacity:0.5,radius:123426}).addTo(layergroup).bindPopup('France : 61713')
@@ -6036,5 +6123,3 @@
     </script>
 
 </html>
-
-      
