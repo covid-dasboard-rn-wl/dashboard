@@ -115,15 +115,15 @@
         <div class="row3">
             <div id="side3">
                 <div class="w3-panel w3-card">
-                    <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Time Series (Confirmed Cases)</h2></div>  
-                    <h2 id="g1caption">Throughout the entire year, the total confirmed cases has skyrocketed and we have done our best to try and "flatten" the curve. This data set below displays the total confirmed global cases of COVID-19 throughout the entirety of 2020. <br><br>The data you see below was gathered incrementally. Specifically meaning the time period in between each bar is 4 days. The data ranges from late January 22 to May 19. </h2>
+                    <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Canadian Time Series (Confirmed)</h2></div>  
+                    <h2 id="g1caption">Slowly, COVID-19 has solidified its place in Canada ever since March and its declaration as a pandemic. Although total confirmed cases have been greatly increasing since our country's real introduction to the virus in March, it seems though we have done a good job countering the virus as we hope to completely stop it.<br><br>The data you see below was gathered incrementally and it displays the total confirmed cases in Canada over time. The time period in between each bar is 4 days as the data ranges from late February to May 19. </h2>
                     <div id="canvascontain4"><canvas id="mycanvas4" width="600" height="600" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>    
                 </div>
             </div>
               <div id="main3">
                 <div class="w3-panel w3-card">
-                    <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Global Leaders</h2></div>
-                    <h2 id="g1caption">The  Figure below displays the world's leaders in Confirmed Cases, Recoveries, and Deaths. Navigate using the buttons below to get rid of the filler bars and to see the top 9 regions for each data category.</h2>
+                    <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Provincial Leaders</h2></div>
+                    <h2 id="g1caption">Below, the figure shows just how each province in Canada is doing in terms of its confirmed cases, recoveries, adn deaths as a result of COVID-19. Navigate using the buttons below to get rid of the filler bars and to see each province's data for each data category.</h2>
                     <div id="btns2">
                         <button onclick="dgraph()" id="mapped" class="ctrl">Deaths</button>
                         <button onclick="cgraph()" id="active" class="ctrl">Confirmed</button>
@@ -335,10 +335,10 @@
         for (province=0; province<data.length; province++){
             if (data[province]["Country_Region"] == "Canada") {
                 ctx.fillStyle = "#85ded1";
-                ctx.fillRect(10,y, data[province]["Confirmed"]/80,50);
+                ctx.fillRect(10,y, data[province]["Confirmed"]/90,50);
                 ctx.fillStyle = "darkgray";
                 ctx.font = "10pt Times";
-                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], 560,y+28);
+                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], data[province]["Confirmed"]/90 + 20,y+28);
                 var y = y+60
             
             }
@@ -353,11 +353,11 @@
         var y = 10;
         for (province=0; province<data.length; province++){
             if (data[province]["Country_Region"] == "Canada") {
-                ctx.fillStyle = "c985ac";
-                ctx.fillRect(10,y, data[province]["Recovered"]/70,50);
+                ctx.fillStyle = "#c985ac";
+                ctx.fillRect(10,y, data[province]["Recovered"]/40,50);
                 ctx.fillStyle = "darkgray";
                 ctx.font = "10pt Times";
-                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Recovered"], 560,y+28);
+                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Recovered"], data[province]["Recovered"]/40 + 20,y+28);
                 var y = y+60
             
             }
@@ -366,23 +366,36 @@
         
           function dgraph(){
                var c = document.getElementById("mycanvas3");
-        var ctx = c.getContext('2d');
-        ctx.clearRect(0,0,600,600);
-        var y = 10;
-        for (province=0; province<data.length; province++){
-            if (data[province]["Country_Region"] == "Canada") {
-                ctx.fillStyle = "orange";
-                ctx.fillRect(10,y, data[province]["Deaths"]/30,50);
-                ctx.fillStyle = "darkgray";
-                ctx.font = "10pt Times";
-                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Deaths"], 560,y+28);
-                var y = y+60
-            
+                var ctx = c.getContext('2d');
+                ctx.clearRect(0,0,600,600);
+                var y = 10;
+                for (province=0; province<data.length; province++){
+                    if (data[province]["Country_Region"] == "Canada") {
+                    ctx.fillStyle = "orange";
+                    ctx.fillRect(10,y, data[province]["Deaths"]/8,50);
+                    ctx.fillStyle = "darkgray";
+                    ctx.font = "10pt Times";
+                    ctx.fillText(data[province]['Province_State'] + " " + data[province]["Deaths"], data[province]["Deaths"]/8 + 20,y+28);
+                    var y = y+60
+
             }
         }
         
          
           }
+        
+        var c = document.getElementById("mycanvas3");
+        var ctx = c.getContext('2d');
+        ctx.clearRect(0,0,600,600);
+        var y = 30;
+        var w = 100;
+      
+        for (leaders=0; leaders<9; leaders++){     
+            ctx.fillStyle = "#021018";
+            ctx.fillRect(10,y, w,50);
+            var y = y+60
+            var w = w+50;
+        }
         
        
         
