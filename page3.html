@@ -2,16 +2,18 @@
 <html>
 
     <head>
+        
+        <!-- all stylistic links and references to w3 schools card style, external style sheets, and json files //-->
         <link rel='stylesheet' href='https://unpkg.com/leaflet@1.4.0/dist/leaflet.css'/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- Bootstrap core CSS -->
-<link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
         <script src="05-20-2020.json"></script>
         <script src="canadatseries.json"></script>
@@ -26,41 +28,49 @@
    
     
     <body>
-        
+        <!-- navigation bar as header //-->
         <header>
-  <div class="collapse bg-light" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-10 col-md-7 py-4">
-          <h4 class="text-muted">Our Dashboard</h4>
-          <p class="text-muted">This website is dedicated to informing the public about the current COVID-19 situation around the world and in Canada through  continuous updates on cases, deaths, and recoveries.</p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-muted">Pages</h4>
-          <ul class="list-unstyled">
-            <li><a href="index.html" class="text-muted">Global Data</a></li>
-            <li><a href="about.html" class="text-muted">About</a></li>
-            <li><a href="page3.html" class="text-muted">Canadian Data</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container d-flex justify-content-between">
-      <a href="index.html" class="navbar-brand d-flex align-items-center">
-       
-          <div id="title"><img src="virus2.png"><strong>COVID-19 Dashboard</strong></div>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
+          <div class="collapse bg-light" id="navbarHeader">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-10 col-md-7 py-4">
+                  <h4 class="text-muted">Our Dashboard</h4>
+                  <p class="text-muted">This website is dedicated to informing the public about the current COVID-19 situation around the world and in Canada through  continuous updates on cases, deaths, and recoveries.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                  <h4 class="text-muted">Pages</h4>
+                  <ul class="list-unstyled">
+                      <!-- linked pages in the navigation bar //-->
+                    <li><a href="index.html" class="text-muted">Global Data</a></li>
+                    <li><a href="about.html" class="text-muted">About</a></li>
+                    <li><a href="page3.html" class="text-muted">Canadian Data</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!-- navigation bar style color //-->
+          <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+              <a href="index.html" class="navbar-brand d-flex align-items-center">
+
+                  <!-- nav bar title //-->
+
+                  <div id="title"><img src="virus2.png"><strong>COVID-19 Dashboard</strong></div>
+              </a>
+                <!-- bootstrap icon//-->
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>
 </header>
-        
+        <!-- page title and caption for canadian data//-->
         <div id="titlecontain"><h2 id=ttitle>COVID-19 Around In Canada (May 20, 2020)</h2></div>
         <div id="caption"><h5 id='captiontext'>For the past few months, COVID-19 has taken Canada by storm.Canada's fight against the virus has been relentless, however, our efforts to counter the virus are not yet finished. It is crucial that all of its data relating its journey around the Country is tracked using graphs, maps, and facts. Below you will find "at-a-glance" data for COVID-19 in Canada. </h5></div>
+        
+        <!-- canadian data total deaths, recoveries, and confirmed stat cards placed into the same row and column grid//-->
+        
         <div class="row">
   <div class="side">
       <div class="w3-panel w3-card"><p id="card1">Canadian Deaths</p><h2 id=tcard1>6,250</h2><br></div>
@@ -75,23 +85,39 @@
             </div>
             
         </div>
+        
+        <!-- title of cloropleth mapped data section //-->
+        
         <div id="titlecontain2"><h2 id=ttitle2>Mapped Data</h2></div>
-        <div id="caption"><h5 id='captiontext'>Here, you can browse through mapped data for hundreds of countries for their deaths, total confirmed cases, and even their recoveries using the control panel</h5></div>
+        <div id="caption"><h5 id='captiontext'>Here, you can browse through mapped data for all Canadian provinces for their deaths, total confirmed cases, and even their recoveries using the control panel</h5></div>
+        
+        <!-- div for the entire map section and control panel. it contains the map and control panel //-->
         
         <div id="mapcontain">
             
+        <!-- cloropleth map div with css card style in mapcontain div //-->
+            
         <div id='map' class="w3-panel w3-card"></div>
-            <div id="control" class="w3-panel w3-card">
+            
+        <!-- control panel section with css w3 card style //-->
+            
+        <div id="control" class="w3-panel w3-card">
             
                 <h3 id="ctrltitle" >COVID-19 Map</h3>
+            
+                <!-- map button section //-->
                 <div class="w3-panel w3-card"><h2 id="ctrltext">Controls: Click any of the buttons below to switch the graph's data</h2>
                     <div id="btns">
-                   
+                        <!-- buttons to change the maps display with their functions //-->
                         <button onclick="deaths()" id="mapped" class="ctrl">Deaths</button> 
                         <button onclick="draw()" id="active" class="ctrl">Confirmed</button> 
                         <button onclick="recover()" id="recover" class="ctrl">Recovered</button></div></div>
+            
+            <!-- start of canada's leaders in recoveries, deaths, and confirmed cases in the country in the control panel //-->
                 
                 <div><h3 id="wleaders">Canada's Leaders</h3></div>
+            
+            <!-- stat cards formatted into the same row with the w3 card style  //-->
         <div class="row2">
           <div class="side2">
               <div class="w3-panel w3-card"><p id="stat1">Deaths</p><h2 id=wcard1>3,719 (Quebec)</h2><br></div>
@@ -110,24 +136,30 @@
             </div>
             
         </div>
-    
-    
+        <!-- start of graph section //-->
+        <!-- row and column format style for the 2 graphs. each graph is in the same row and different columns, thus positioned right next to each other//-->
         <div class="row3">
+            <!-- start of first graph section displaying the canadian data time series of confirmed cases //-->
             <div id="side3">
-                <div class="w3-panel w3-card">
+                <div class="w3-panel w3-card"> <!-- w3 card style for graph 1 //-->
+                    <!-- graph title and caption //-->
                     <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Canadian Time Series (Confirmed)</h2></div>  
                     <h2 id="g1caption">Slowly, COVID-19 has solidified its place in Canada ever since March and its declaration as a pandemic. Although total confirmed cases have been greatly increasing since our country's real introduction to the virus in March, it seems though we have done a good job countering the virus as we hope to completely stop it.<br><br>The data you see below was gathered incrementally and it displays the total confirmed cases in Canada over time. The time period in between each bar is 4 days as the data ranges from late February to May 19. </h2>
+                    <!-- drawing the canvas for the time series graph 600 x 600 //-->
                     <div id="canvascontain4"><canvas id="mycanvas4" width="600" height="600" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>    
                 </div>
             </div>
+            <!-- start of second graph which displays the provincial data for confirmed cases, recoveries, and deaths //-->
               <div id="main3">
-                <div class="w3-panel w3-card">
-                    <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Provincial Leaders</h2></div>
+                <div class="w3-panel w3-card"><!-- w3 schools style card for graph //-->
+                    <div id="gtitlecontain"><h2 id=gtitle>COVID-19 Provincial Leaders</h2></div><!-- graph title and caption //-->
                     <h2 id="g1caption">Below, the figure shows just how each province in Canada is doing in terms of its confirmed cases, recoveries, adn deaths as a result of COVID-19. Navigate using the buttons below to get rid of the filler bars and to see each province's data for each data category.</h2>
+                    <!-- buttons that control the graph. each button has their own function to display confirmed, recoveries, and deaths //-->
                     <div id="btns2">
                         <button onclick="dgraph()" id="mapped" class="ctrl">Deaths</button>
                         <button onclick="cgraph()" id="active" class="ctrl">Confirmed</button>
                         <button onclick="rgraph()" id="recover" class="ctrl">Recovered</button></div>
+                    <!-- drawing the canvas in which the graph is drawn onto for the provincial data //-->
                     <div id="canvascontain3"><canvas id="mycanvas3" width="600" height="600" style="border:0.5px solid lightgray; padding-left: 15px; background-color: #08283f"></canvas></div>
                 </div>
                 
@@ -139,7 +171,7 @@
 
     <script>
         
-        // GEOJSON COLOR RAMP
+        // GEOJSON COLOR Style for confirmed button and data//
         function getColor(c) {
            if (c > 40000) {
               return '#152421'; 
@@ -160,6 +192,7 @@
                 return '#89ded1'
             }
         }
+        // GEOJSON COLOR Style for deaths button and data. the color is associated with the data of each province//
         function getColor2(d) {
            if (d > 3500) {
               return '#b07002'; 
@@ -176,7 +209,7 @@
                 return '#f5c778'
             }
         }
-         
+         // GEOJSON COLOR Style for recovered button and data. the color is associated with the data of each province//
          function getColor3(r) {
            if (r > 18000) {
               return '#6b0c42'; 
@@ -198,7 +231,7 @@
             }
         }
         
-        // GEOJSON STYLE
+        // GEOJSON STYLE of the provinces for confirmed map//
         function style(feature) {
         return {
                 fillColor: getColor(feature.properties.confirmed),
@@ -209,7 +242,7 @@
                 fillOpacity: 0.7,
             };
         }
-        
+        // GEOJSON STYLE of the provinces for death map//
         function style2(features) {
         return {
                 fillColor: getColor2(features.properties.deaths),
@@ -220,7 +253,7 @@
                 fillOpacity: 0.7,
             };
         }
-        
+        // GEOJSON STYLE of the provinces for recovered map//
         function style3(feature2) {
         return {
                 fillColor: getColor3(feature2.properties.recover),
@@ -234,7 +267,7 @@
         
         // Set up the world map
         map = new L.Map('map');
-        var cartocdn = 'https://cartocdn_{s}.global.ssl.fastly.net/base-midnight/{z}/{x}/{y}.png';
+        var cartocdn = 'https://cartocdn_{s}.global.ssl.fastly.net/base-midnight/{z}/{x}/{y}.png'; // imported map base layer//
         cartoAttrib = 'Carto geodatabase is good for this application';
         carto = new L.TileLayer(cartocdn);
         map.setView([65, -100],3.3); // centered on London lat, long
@@ -242,21 +275,21 @@
         layergroup = L.layerGroup().addTo(map);
         
          
-        
+        //draws the cloropleth map for confirmed data and customizes the tool tip for each province. it references a geojson file for confirmed as provs2//
         function draw() {
             layergroup.clearLayers();
             L.geoJson(provs2, {style: style, onEachFeature: function (feature, layer) {
             layer.bindPopup('<h5>Confirmed</h5><h4>'+feature.properties.confirmed+'</h4>');
             }}).addTo(layergroup);   
         } 
-        
+        //draws the cloropleth map for deaths data and customizes the tool tip for each province. it references a geojson file for deaths as provs//
         function deaths() {
             layergroup.clearLayers();
             L.geoJson(provs, {style: style2, onEachFeature: function (features, layer) {
             layer.bindPopup('<h5>Deaths</h5><h1>'+features.properties.deaths+'</h4>');
             }}).addTo(layergroup);
         }
-        
+        //draws the cloropleth map for recovered data and customizes the tool tip for each province. it references a geojson file for recoveries as provs3//
         function recover() {
             layergroup.clearLayers();
             L.geoJson(provs3, {style: style3, onEachFeature: function (feature2, layer) {
@@ -264,11 +297,11 @@
             }}).addTo(layergroup);
         }
         
-        
+        // references the time series graph in order to draw on it//
         var c = document.getElementById("mycanvas4");
         var ctx = c.getContext('2d');
         
-        
+        //draws the x and y axis of the time series graph//
         ctx.beginPath();
         ctx.moveTo(513, 20);
         ctx.lineTo(513, 560);
@@ -277,7 +310,9 @@
         ctx.lineTo(513, 560);
         ctx.stroke();
         
+        
         r = 560
+        //for loop draws the 11 marking lines on the y axis as the indicator for the bar's value//
         for (lines=0; lines<11; lines++) {
             ctx.beginPath();
             ctx.moveTo(513, r);
@@ -288,6 +323,7 @@
         
         t = 0
         h = 565
+        //for loop draws the 11 text labels on the y axis. the text label number increases by 10,000 each time it loops and writes text//
         for (text=0; text<11; text++){
             ctx.fillStyle = "darkgray";
             ctx.font = "10pt Times";
@@ -297,13 +333,14 @@
         }
     
         var x = 0;
+        //for loop draw the actual bars of the canadian time series graph through using the canadatimeseries json file and drawing a bar for every object//
         for (confirm=0; confirm<data2.length; confirm++) {
             if (data2[confirm]["Confirmed"]>10){
             ctx.fillStyle = "#021018";
-            ctx.fillRect(x,560,15,-data2[confirm]["Confirmed"]/193);
+            ctx.fillRect(x,560,15,-data2[confirm]["Confirmed"]/193);//divided by 193 to format the bar  on the graph to match the axis label # and date//
             var x = x+23  }
         }
-        
+        //x-axis date labels manually drawn//
         ctx.fillStyle = "darkgray";
         ctx.font = "8pt Times";
         ctx.fillText("Feb. 26", 10, 585);
@@ -325,58 +362,59 @@
         ctx.fillText("Now", 490, 585);
         
         
+        //start of the functions for the buttons that change the data shown on the provincial graph on the bottom left of the webpage//
+        //function draws confirmed cases for each canadian provinces using a rect on canvas
+        function cgraph(){
         
-          function cgraph(){
-            
-        var c = document.getElementById("mycanvas3");
-        var ctx = c.getContext('2d');
-        ctx.clearRect(0,0,600,600);
-        var y = 10;
-        for (province=0; province<data.length; province++){
-            if (data[province]["Country_Region"] == "Canada") {
-                ctx.fillStyle = "#85ded1";
-                ctx.fillRect(10,y, data[province]["Confirmed"]/90,50);
-                ctx.fillStyle = "darkgray";
-                ctx.font = "10pt Times";
-                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], data[province]["Confirmed"]/90 + 20,y+28);
-                var y = y+60
-            
+            var c = document.getElementById("mycanvas3"); //references the canvas to be drawn on//
+            var ctx = c.getContext('2d');
+            ctx.clearRect(0,0,600,600); //clears the canvas before drawing//
+            var y = 10;
+            for (province=0; province<data.length; province++){ //for loop loops through data to find province//
+                if (data[province]["Country_Region"] == "Canada") { //function draws all confirmed cases once found Canada as the country in the data//
+                    ctx.fillStyle = "#85ded1";
+                    ctx.fillRect(10,y, data[province]["Confirmed"]/90,50);
+                    ctx.fillStyle = "darkgray";
+                    ctx.font = "10pt Times";
+                    ctx.fillText(data[province]['Province_State'] + " " + data[province]["Confirmed"], data[province]["Confirmed"]/90 + 20,y+28); 
+                    var y = y+60 // y value increases each loop//
+
+                }
             }
-        }
           }
-        
+        //function draws recovered cases for each canadian provinces using a rect on canvas
         function rgraph() {
         
-          var c = document.getElementById("mycanvas3");
-        var ctx = c.getContext('2d');
-        ctx.clearRect(0,0,600,600);
-        var y = 10;
-        for (province=0; province<data.length; province++){
-            if (data[province]["Country_Region"] == "Canada") {
-                ctx.fillStyle = "#c985ac";
-                ctx.fillRect(10,y, data[province]["Recovered"]/40,50);
-                ctx.fillStyle = "darkgray";
-                ctx.font = "10pt Times";
-                ctx.fillText(data[province]['Province_State'] + " " + data[province]["Recovered"], data[province]["Recovered"]/40 + 20,y+28);
-                var y = y+60
-            
+            var c = document.getElementById("mycanvas3"); //references the canvas to be drawn on//
+            var ctx = c.getContext('2d');
+            ctx.clearRect(0,0,600,600); //clears the canvas before drawing//
+            var y = 10;
+            for (province=0; province<data.length; province++){ //for loop loops through data to find province//
+                if (data[province]["Country_Region"] == "Canada") { //function draws all recovered cases on canvas once found Canada as country in the data//
+                    ctx.fillStyle = "#c985ac";
+                    ctx.fillRect(10,y, data[province]["Recovered"]/40,50);
+                    ctx.fillStyle = "darkgray";
+                    ctx.font = "10pt Times";
+                    ctx.fillText(data[province]['Province_State'] + " " + data[province]["Recovered"], data[province]["Recovered"]/40 + 20,y+28);
+                    var y = y+60 // y value or position of bar increases each loop//
+
+                }
             }
         }
-        }
-        
+        //function draws deaths for each canadian provinces using a rect on canvas
           function dgraph(){
-               var c = document.getElementById("mycanvas3");
+               var c = document.getElementById("mycanvas3");//references the canvas to be drawn on//
                 var ctx = c.getContext('2d');
-                ctx.clearRect(0,0,600,600);
+                ctx.clearRect(0,0,600,600);//clears the canvas before drawing//
                 var y = 10;
-                for (province=0; province<data.length; province++){
-                    if (data[province]["Country_Region"] == "Canada") {
+                for (province=0; province<data.length; province++){ //for loop loops through data to find province//
+                    if (data[province]["Country_Region"] == "Canada") { //function draws all deaths on canvas once found Canada as country in the data//
                     ctx.fillStyle = "orange";
                     ctx.fillRect(10,y, data[province]["Deaths"]/8,50);
                     ctx.fillStyle = "darkgray";
                     ctx.font = "10pt Times";
                     ctx.fillText(data[province]['Province_State'] + " " + data[province]["Deaths"], data[province]["Deaths"]/8 + 20,y+28);
-                    var y = y+60
+                    var y = y+60 // y value or position of bar increases each loop//
 
             }
         }
@@ -384,14 +422,17 @@
          
           }
         
+        //referencing provincial covid data canvas graph to be drawn on//
         var c = document.getElementById("mycanvas3");
         var ctx = c.getContext('2d');
         ctx.clearRect(0,0,600,600);
+        //sets variables to be changed before for loop. y is positioning, w is width of the rect//
         var y = 30;
         var w = 100;
       
-        for (leaders=0; leaders<9; leaders++){     
-            ctx.fillStyle = "#021018";
+        for (leaders=0; leaders<9; leaders++){    
+            //for loop draws 9 filler bars. they are removed once one of the buttons are clicked fro the provincial data graph. used to avoid blank space//
+            ctx.fillStyle = "#021018"; //fill color of rectangle//
             ctx.fillRect(10,y, w,50);
             var y = y+60
             var w = w+50;
